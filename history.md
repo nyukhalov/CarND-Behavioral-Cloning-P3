@@ -1,3 +1,12 @@
+## 2018-10-11 08:32pm
+
+Changes / configuration:
+- Added data augmentation by flipping original images
+
+Result:
+- `1856/1856 [==============================] - 73s 39ms/step - loss: 0.0185 - val_loss: 0.0552`
+- The car is much more stable now
+
 ## 2018-10-11 08:28pm
 
 Changes / configuration:
