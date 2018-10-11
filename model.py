@@ -11,9 +11,24 @@ folders = [
     'track1_ccw'
 ]
 
+## Steering angle is in between -1 and 1 inclusive
+## -1 imlies the most left position (a car turns left)
+## 1 implies the most right position (a car turns right)
+steering_correction = 0.1
+
 lines = []
 images = []
 measurements = []
+
+def load_image(data_path, source_image_path):
+    filename = source_image_path.split('/')[-1]
+    current_path = data_path + '/IMG/' + filename
+    return ndimage.imread(current_path)    
+
+def flip_image(image, steering):
+    image_flipped = np.fliplr(image)
+    steering_flipped = -steering
+    return (image_flipped, steering_flipped)
 
 for folder in folders:
     data_path = data_root_path + folder
@@ -24,19 +39,27 @@ for folder in folders:
             lines.append(line)
 
     for line in lines:
-        source_path = line[0]
-        filename = source_path.split('/')[-1]
-        current_path = data_path + '/IMG/' + filename
-        image = ndimage.imread(current_path)
-        images.append(image)
+        center_image_path = line[0]
+        left_image_path = line[1]
+        right_image_path = line[2]
 
-        measurement = float(line[3])
-        measurements.append(measurement)
+        image_center = load_image(data_path, center_image_path)
+        image_left = load_image(data_path, left_image_path)
+        image_right = load_image(data_path, right_image_path)
+        
+        steering_center = float(line[3])
+        steering_left = steering_center + steering_correction
+        steering_right = steering_center - steering_correction
+        
+        images.extend([image_center, image_left, image_right])
+        measurements.extend([steering_center, steering_left, steering_right])
 
-        image_flipped = np.fliplr(image)
-        measurement_flipped = -measurement
-        images.append(image_flipped)
-        measurements.append(measurement_flipped)
+        image_center_flipped, steering_center_flipped = flip_image(image_center, steering_center)
+        image_left_flipped, steering_left_flipped = flip_image(image_left, steering_left)
+        image_right_flipped, steering_right_flipped = flip_image(image_right, steering_right)
+
+        images.extend([image_center_flipped, image_left_flipped, image_right_flipped])
+        measurements.extend([steering_center_flipped, steering_left_flipped, steering_right_flipped])
 
 X_train = np.array(images)
 y_train = np.array(measurements)

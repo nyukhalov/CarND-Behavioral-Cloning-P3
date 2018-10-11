@@ -1,3 +1,22 @@
+## 2018-10-11 09:17pm
+
+Changes / configuration:
+- Reduced the correction value to 0.1
+
+Result:
+- `5568/5568 [==============================] - 166s 30ms/step - loss: 0.0112 - val_loss: 0.0495`
+- A car drives better, but it could not pass the first turn
+
+## 2018-10-11 08:51pm
+
+Changes / configuration:
+- Using left and right camera images to train a model to correct its position
+- Correction value is 0.2
+
+Result:
+- `5568/5568 [==============================] - 228s 41ms/step - loss: 0.0073 - val_loss: 0.0517`
+- A car is steering right too much, need to tune correction value
+
 ## 2018-10-11 08:32pm
 
 Changes / configuration:
