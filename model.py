@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten, Lambda, Conv2D, MaxPooling2D
+from keras.layers import Dense, Activation, Flatten, Lambda, Conv2D, MaxPooling2D, Cropping2D
 from scipy import ndimage
 import numpy as np
 import csv
@@ -66,7 +66,8 @@ y_train = np.array(measurements)
 
 # Defining a model
 model = Sequential()
-model.add(Lambda(lambda x: x / 255.0 - 0.5, input_shape=(160,320,3)))
+model.add(Cropping2D(cropping=((60,20), (0,0)), input_shape=(160,320,3)))
+model.add(Lambda(lambda x: x / 255.0 - 0.5))
 model.add(Conv2D(filters=6, kernel_size=5))
 model.add(MaxPooling2D())
 model.add(Conv2D(filters=16, kernel_size=5))

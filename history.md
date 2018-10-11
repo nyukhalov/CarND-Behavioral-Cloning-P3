@@ -1,6 +1,16 @@
 ## 2018-10-11 09:17pm
 
 Changes / configuration:
+- Cut 60 and 20 pixels from the top and bottom respectively
+
+Result:
+- `5568/5568 [==============================] - 81s 14ms/step - loss: 0.0094 - val_loss: 0.0378`
+- The car passes the firt left turn and the bridge after it.
+- However it failed to turn left at quite curve turn.
+
+## 2018-10-11 09:17pm
+
+Changes / configuration:
 - Reduced the correction value to 0.1
 
 Result:
