@@ -8,7 +8,8 @@ import cv2
 # Importing data
 data_root_path = './data/'
 folders = [
-    'track1_ccw'
+    'track1_ccw',
+    'track1_cw'
 ]
 
 ## Steering angle is in between -1 and 1 inclusive
@@ -16,7 +17,6 @@ folders = [
 ## 1 implies the most right position (a car turns right)
 steering_correction = 0.1
 
-lines = []
 images = []
 measurements = []
 
@@ -31,6 +31,7 @@ def flip_image(image, steering):
     return (image_flipped, steering_flipped)
 
 for folder in folders:
+    lines = []
     data_path = data_root_path + folder
     print('Importing data from %s' % data_path)
     with open(data_path + '/driving_log.csv') as csvfile:
@@ -66,7 +67,7 @@ y_train = np.array(measurements)
 
 # Defining a model
 model = Sequential()
-model.add(Cropping2D(cropping=((60,20), (0,0)), input_shape=(160,320,3)))
+model.add(Cropping2D(cropping=((70,25), (0,0)), input_shape=(160,320,3)))
 model.add(Lambda(lambda x: x / 255.0 - 0.5))
 model.add(Conv2D(filters=6, kernel_size=5))
 model.add(MaxPooling2D())

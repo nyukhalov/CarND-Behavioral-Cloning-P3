@@ -1,7 +1,17 @@
 ## 2018-10-11 09:17pm
 
 Changes / configuration:
-- Cut 60 and 20 pixels from the top and bottom respectively
+- Crop 70 and 25 pixels from the rop and bottom respectively (instead of 60 and 20)
+- Added files from clock-wise lap (`track1_cw`)
+
+Result:
+- `10968/10968 [==============================] - 130s 12ms/step - loss: 0.0128 - val_loss: 0.0115`
+- The car is more centered now, but it still cannot pass the second curce turn.
+
+## 2018-10-11 09:17pm
+
+Changes / configuration:
+- Crop 60 and 20 pixels from the top and bottom respectively
 
 Result:
 - `5568/5568 [==============================] - 81s 14ms/step - loss: 0.0094 - val_loss: 0.0378`
