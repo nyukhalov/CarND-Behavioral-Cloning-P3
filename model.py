@@ -1,36 +1,45 @@
 from keras.models import Sequential
-from keras.layers import Dense, Activation, Flatten
+from keras.layers import Dense, Activation, Flatten, Lambda
 from scipy import ndimage
 import numpy as np
 import csv
 import cv2
 
 # Importing data
-lines = []
-with open('./data/track1_ccw/driving_log.csv') as csvfile:
-    reader = csv.reader(csvfile)
-    for line in reader:
-        lines.append(line)
+data_root_path = './data/'
+folders = [
+    'track1_ccw'
+]
 
+lines = []
 images = []
 measurements = []
-for line in lines:
-    source_path = line[0]
-    filename = source_path.split('/')[-1]
-    current_path = './data/track1_ccw/IMG/' + filename
-    #image = cv2.imread(current_path)
-    image = ndimage.imread(current_path)
-    images.append(image)
 
-    measurement = float(line[3])
-    measurements.append(measurement)
+for folder in folders:
+    data_path = data_root_path + folder
+    print('Importing data from %s' % data_path)
+    with open(data_path + '/driving_log.csv') as csvfile:
+        reader = csv.reader(csvfile)
+        for line in reader:
+            lines.append(line)
+
+    for line in lines:
+        source_path = line[0]
+        filename = source_path.split('/')[-1]
+        current_path = data_path + '/IMG/' + filename
+        image = ndimage.imread(current_path)
+        images.append(image)
+
+        measurement = float(line[3])
+        measurements.append(measurement)
 
 X_train = np.array(images)
 y_train = np.array(measurements)
 
 # Defining a model
 model = Sequential()
-model.add(Flatten(input_shape=(160,320,3)))
+model.add(Lambda(lambda x: x / 255.0 - 0.5, input_shape=(160,320,3)))
+model.add(Flatten())
 model.add(Dense(1))
 
 # Compilation
