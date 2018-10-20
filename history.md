@@ -1,3 +1,12 @@
+## 2018-10-20 06:25pm
+
+Changes / configuration:
+- Fixed a bug in the model (I forgot to use activations after conv and dense layers)
+- Decreased the number of epochs to 2
+
+Resuls:
+- ???
+
 ## 2018-10-20 05:20pm
 
 Changes / configuration:
