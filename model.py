@@ -5,6 +5,14 @@ import numpy as np
 import csv
 import cv2
 
+"""
+# Download data
+wget -O data.zip https://www.dropbox.com/s/cfwvaj006ce0bgw/carnd-behavioral-cloning-data.zip\?dl\=0
+
+# Unzip the archive
+unzip data.zip -d ./data
+"""
+
 # Importing data
 data_root_path = './data/'
 folders = [
