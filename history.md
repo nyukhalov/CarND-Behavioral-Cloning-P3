@@ -1,3 +1,15 @@
+## 2018-10-20 05:20pm
+
+Changes / configuration:
+- Added additional records for track 1 CW and CCW
+- Added smooth recording for the most curve turns
+
+Result:
+- `Epoch 3/3 24076/24076 [==============================] - 522s - loss: 0.0532 - val_loss: 0.0596`
+- The number of epoch is too much, 2 is more than okay.
+- The car drives very bad. Going left, then right, then left. Cannot go strait.
+- Maybe the model is overfitted?
+
 ## 2018-10-11 09:17pm
 
 Changes / configuration:
