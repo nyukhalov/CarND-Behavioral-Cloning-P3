@@ -5,7 +5,8 @@ Changes / configuration:
 - Decreased the number of epochs to 2
 
 Resuls:
-- ???
+- The car has finished the whole lap, it drives very well.
+- The car eventually slows down. Don't know why.
 
 ## 2018-10-20 05:20pm
 
