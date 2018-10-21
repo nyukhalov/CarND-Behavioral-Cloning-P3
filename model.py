@@ -7,9 +7,7 @@ import cv2
 
 """
 # Download data
-wget -O data.zip https://www.dropbox.com/s/cfwvaj006ce0bgw/carnd-behavioral-cloning-data.zip\?dl\=0
-
-wget -O data2.zip https://www.dropbox.com/s/woyqkmj01idmmto/carnd-behavioral-cloning-data2.zip?dl=0
+wget -O data.zip https://www.dropbox.com/s/u7zy7414mu6vycs/carnd-behavioral-cloning-data2.zip?dl=0
 
 # Unzip the archive
 unzip data.zip -d ./data
