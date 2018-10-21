@@ -1,3 +1,12 @@
+## 2018-10-20 11:16pm
+
+Changes / configuration:
+- Increased the car's speed to 15
+
+Result:
+- The car is still able to pass the track, but now it is constantly moving from left to right and back.. ):
+- Maybe it happens because of too high value of angle correction??
+
 ## 2018-10-20 06:25pm
 
 Changes / configuration:
