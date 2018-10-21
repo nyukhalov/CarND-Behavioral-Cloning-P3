@@ -15,7 +15,10 @@ wget -O data2.zip https://www.dropbox.com/s/woyqkmj01idmmto/carnd-behavioral-clo
 unzip data.zip -d ./data
 """
 
-# Importing data
+# Importing data.
+# Each folder contains recorded images of a single run.
+# 'track1_*' folders contain recorded images from runs in the track one.
+# 'track2_*' folders contain recorded images from runs in the track two.
 data_root_path = './data/'
 folders = [
     'track1_ccw',
@@ -33,23 +36,32 @@ folders = [
 ]
 
 ## Steering angle is in between -1 and 1 inclusive
-## -1 imlies the most left position (a car turns left)
-## 1 implies the most right position (a car turns right)
+## -1 implies the most left position (a car turns left)
+##  1 implies the most right position (a car turns right)
 steering_correction = 0.1
 
 images = []
 measurements = []
 
 def load_image(data_path, source_image_path):
+    """
+    Load an image from filesystem as an numpy array.
+    `data_path` - path to a folder containg images
+    `source_image_path` - original path of the loading image
+    """
     filename = source_image_path.split('/')[-1]
     current_path = data_path + '/IMG/' + filename
     return ndimage.imread(current_path)    
 
 def flip_image(image, steering):
+    """
+    Flips the `image` horizontally.
+    """
     image_flipped = np.fliplr(image)
     steering_flipped = -steering
     return (image_flipped, steering_flipped)
 
+# Loading images from all specified folders
 for folder in folders:
     lines = []
     data_path = data_root_path + folder
@@ -59,6 +71,10 @@ for folder in folders:
         for line in reader:
             lines.append(line)
 
+    # For each line in the csv-file
+    # 1. Load center, left and right images
+    # 2. Calculate corrected steering angle for the left and right images
+    # 3. Add flipped images
     for line in lines:
         center_image_path = line[0]
         left_image_path = line[1]
@@ -105,7 +121,6 @@ model.summary()
 # Compilation
 model.compile(optimizer='adam', loss='mse')
 
-# Training
+# Training and saving the model
 model.fit(X_train, y_train, validation_split=0.2, shuffle=True, epochs=2)
-
 model.save('model.h5')
