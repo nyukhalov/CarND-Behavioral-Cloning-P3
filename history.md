@@ -1,10 +1,20 @@
+## 2018-10-21 09:39pm
+
+Changes / configuration:
+- Added recording from the track 2 (CW + CCW), 2 laps for each direction using mouse (!!!) 
+- I expect to see much stable behavior in the track 2
+
+Result:
+- ???
+
 ## 2018-10-21 02:18pm
 
 Changes / configuration:
 - Added recording from the track 2 (CW + CCW), 2 laps for each direction
 
 Result:
-- ???
+- The car is able to pass most of the track 2 having speed of 7-10 Mph.
+- However there're a few very curve turs the car cannot pass.
 
 
 ## 2018-10-21 11:37am 

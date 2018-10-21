@@ -26,10 +26,10 @@ folders = [
     'track1_cw_2',
     'track1_cw_turnA',
     'track1_cw_turnB',
-    'track2_cw',
-    'track2_cw_2',
-    'track2_ccw',
-    'track2_ccw_2'
+    'track2_cw_mouse',
+    'track2_cw_mouse_2',
+    'track2_ccw_mouse',
+    'track2_ccw_mouse_2'
 ]
 
 ## Steering angle is in between -1 and 1 inclusive
