@@ -1,3 +1,10 @@
+## 2018-10-21 11:17am 
+
+Changes / configuration:
+- Found and fix a bug in implementing the model (I used strides=(1,1) for the first 3 layers, while at NVidia they used strides=(2,2))
+
+Result:
+
 ## 2018-10-20 11:16pm
 
 Changes / configuration:
