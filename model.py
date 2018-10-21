@@ -9,6 +9,8 @@ import cv2
 # Download data
 wget -O data.zip https://www.dropbox.com/s/cfwvaj006ce0bgw/carnd-behavioral-cloning-data.zip\?dl\=0
 
+wget -O data2.zip https://www.dropbox.com/s/61d4qorrl151709/carnd-behavioral-cloning-data2.zip?dl=0
+
 # Unzip the archive
 unzip data.zip -d ./data
 """
@@ -23,7 +25,9 @@ folders = [
     'track1_cw',
     'track1_cw_2',
     'track1_cw_turnA',
-    'track1_cw_turnB'
+    'track1_cw_turnB',
+    'track2_cw',
+    'track2_ccw'
 ]
 
 ## Steering angle is in between -1 and 1 inclusive

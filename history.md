@@ -1,10 +1,20 @@
+## 2018-10-21 02:18pm
+
+Changes / configuration:
+- Added recording from the track 2 (CW + CCW)
+
+Result:
+- ???
+
+
 ## 2018-10-21 11:37am 
 
 Changes / configuration:
 - Increased speed to 30 Mph
 
 Result:
-- The car still drives well!
+- The car still drives well! 
+- But it cannot drive the track2
 
 ## 2018-10-21 11:17am 
 
