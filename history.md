@@ -5,7 +5,8 @@ Changes / configuration:
 - I expect to see much stable behavior in the track 2
 
 Result:
-- ???
+- The car passes the track 1 without any problems. It drives very well.
+- The car passes the track 2 without any excedent. It doesn't drive perfect. But good enough to pass the track.
 
 ## 2018-10-21 02:18pm
 
