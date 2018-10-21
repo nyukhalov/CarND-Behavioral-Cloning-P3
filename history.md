@@ -1,7 +1,7 @@
 ## 2018-10-21 02:18pm
 
 Changes / configuration:
-- Added recording from the track 2 (CW + CCW)
+- Added recording from the track 2 (CW + CCW), 2 laps for each direction
 
 Result:
 - ???
