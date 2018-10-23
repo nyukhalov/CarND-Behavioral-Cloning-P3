@@ -144,13 +144,20 @@ I used this training data for training the model. The validation set helped dete
 
 My final trained model is able to safely navigate the car on both track one and two. Here're example videos of the car driving on both tracks.
 
+Camera view:
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=4jov2hf09AU
 " target="_blank"><img src="http://img.youtube.com/vi/4jov2hf09AU/0.jpg" 
 alt="Track 1" width="240" height="180" border="10" /></a> <a href="http://www.youtube.com/watch?feature=player_embedded&v=5J8KsJsH8aY
 " target="_blank"><img src="http://img.youtube.com/vi/5J8KsJsH8aY/0.jpg" 
 alt="Track 2" width="240" height="180" border="10" /></a>
 
-The video files are also available here:
+The video files are also available in the `video` directory.
 
-- [Track 1](videos/track1.mp4)
-- [Track 2](videos/track2.mp4)
+3rd-person view
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=7FWQ3BUwcyg
+" target="_blank"><img src="http://img.youtube.com/vi/7FWQ3BUwcyg/0.jpg" 
+alt="Track 1" width="240" height="180" border="10" /></a> <a href="http://www.youtube.com/watch?feature=player_embedded&v=X4h_DA1XbwA
+" target="_blank"><img src="http://img.youtube.com/vi/X4h_DA1XbwA/0.jpg" 
+alt="Track 2" width="240" height="180" border="10" /></a>
