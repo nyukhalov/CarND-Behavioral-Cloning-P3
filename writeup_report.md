@@ -126,7 +126,7 @@ I did not record the vehicle recovering from the left and right sides of the roa
 
 Then I repeated this process on track two in order to get more data points.
 
-To augment the data set, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data set, I also flipped images and angles thinking that this would help to combat overfitting and generalize the model. For example, here is an image that has then been flipped:
 
 ![flipped](img/center_flipped.jpg)
 
@@ -140,4 +140,12 @@ I used this training data for training the model. The validation set helped dete
 
 ### Simulation
 
-todo
+#### 1. The car is able to navigate correctly on test data
+
+My final trained model is able to safely navigate the car on both track one and two. Here're example videos of the car driving on both tracks.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=4jov2hf09AU
+" target="_blank"><img src="http://img.youtube.com/vi/4jov2hf09AU/0.jpg" 
+alt="Track 1" width="240" height="180" border="10" /></a> <a href="http://www.youtube.com/watch?feature=player_embedded&v=5J8KsJsH8aY
+" target="_blank"><img src="http://img.youtube.com/vi/5J8KsJsH8aY/0.jpg" 
+alt="Track 2" width="240" height="180" border="10" /></a>
