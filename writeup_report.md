@@ -116,31 +116,27 @@ Here is a visualization of the architecture:
 
 #### 3. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+To capture good driving behavior, I first recorded four laps (two clockwise, and two counter-clockwise) on track one using center lane driving. Additionally, I captured driving through curve parts of the track one several times. Here is an example image of center lane driving:
 
-![alt text][image2]
+![center](img/center.jpg)
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
+I did not record the vehicle recovering from the left and right sides of the road back to center. Instead, I used images from the left and right cameras to train the model to recover. Here're example images taken by the left and right cameras.
 
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
+![left](img/left.jpg) ![right](img/right.jpg)
 
 Then I repeated this process on track two in order to get more data points.
 
 To augment the data set, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![alt text][image6]
-![alt text][image7]
+![flipped](img/center_flipped.jpg)
 
-Etc ....
+I used a keyboard for controlling the vehicle during capturing data on track one. This was good enough for the track on due to its simplicity. However this approach did not longer work for the track two. I had to use mouse to capture smooth steering, especially passing 180° turns.
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
+After the collection process, I had 120834 data point. I then preprocessed this data by cropping each image (70 px from the top, and 25 px from the bottom), and normalizing it as `x = x / 255 - 0.5`.
 
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 2 as evidenced by increasing the mean squared error during futher training. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
 ### Simulation
 
